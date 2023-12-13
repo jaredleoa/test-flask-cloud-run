@@ -1,138 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background: #f8f8f8;
-                margin: 0;
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #2c3e50;
+            color: #ecf0f1;
+            margin: 0;
+            padding: 20px;
+        }
 
-            h1 {
-                background: #4CAF50;
-                color: white;
-                text-align: center;
-                padding: 20px;
-                margin: 0;
-            }
+        h1 {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
 
-            form {
-                background: #fff;
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                width: 25%;
-                margin: auto;
-                margin-top: 10px;
-            }
+        form {
+            background: #34495e;
+            padding: 20px;
+            border-radius: 10px;
+            width: 25%;
+            margin: auto;
+            margin-top: 10px;
+        }
 
-            form label {
-                display: block;
-                margin-bottom: 8px;
-                color: #333;
-            }
+        form label {
+            margin-bottom: 8px;
+            color: #ecf0f1;
+        }
 
-            form input {
-                width: 100%;
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                box-sizing: border-box;
-            }
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #7f8c8d;
+            border-radius: 5px;
+            background: #2c3e50;
+            color: #ecf0f1;
+            box-sizing: border-box;
+        }
 
-            form button {
-                background: #3498db;
-                color: white;
-                width: 100%;
-                padding: 12px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            }
+        form button {
+            background: #16a085;
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-            form button:hover {
-                background: #2980b9;
-            }
+        form button:hover {
+            background: #1abc9c;
+        }
 
-            form h2 {
-                color: #3498db;
-                padding: 10px;
-                text-align: center;
-            }
-        </style>
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>PYTHON CRUD DATABASE</h1>
-    
-        <form action="/read" method="GET">
-            <h2>GET ALL STUDENTS</h2>
-            <button type="submit">SUBMIT</button>
-        </form>
+        form h2 {
+            color: #ecf0f1;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+    <title>Minimalistic CRUD Interface</title>
+</head>
+<body>
+    <h1>PYTHON CRUD DATABASE</h1>
 
+    <form action="/read" method="GET">
+        <h2>GET ALL STUDENTS</h2>
+        <button type="submit">SUBMIT</button>
+    </form>
 
-        <form id="addStudentForm" enctype="application/json" onsubmit="submitForm('write','addStudentForm'); return false;">
-            <h2>ADD STUDENT</h2>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            <label for="course">Course:</label>
-            <input type="text" id="course" name="course" required><br>
-            <label for="year">Year:</label>
-            <input type="text" id="year" name="year" required><br>
-            <button type="submit">ADD</button>
-        </form>
-        
-        <form id="updateStudent" enctype="application/json" onsubmit="submitForm('update','updateStudent'); return false;">
-            <h2>UPDATE STUDENT</h2>
-            <label for="studentId">Enter Student ID:</label>
-            <input type="text" id="studentId" name="id" required>
-            <br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-            <label for="course">Course:</label>
-            <input type="text" id="course" name="course" required><br>
-            <label for="year">Year:</label>
-            <input type="text" id="year" name="year" required><br>
-            <button type="submit">UPDATE</button>
-        </form>
+    <form id="addStudentForm" enctype="application/json" onsubmit="submitForm('write','addStudentForm'); return false;">
+        <h2>ADD STUDENT</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+        <button type="submit">ADD</button>
+    </form>
 
-        <form action="/delete/" method="get">
-            <h2>DELETE STUDENT BY ID</h2>
-            <label for="studentId">Enter Student ID:</label>
-            <input type="text" id="studentId" name="id" required>
-            <br>
-            <button type="submit">SUBMIT</button>
-        </form>
+    <form id="updateStudent" enctype="application/json" onsubmit="submitForm('update','updateStudent'); return false;">
+        <h2>UPDATE STUDENT</h2>
+        <label for="studentId">Enter Student ID:</label>
+        <input type="text" id="studentId" name="id" required>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="course">Course:</label>
+        <input type="text" id="course" name="course" required>
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+        <button type="submit">UPDATE</button>
+    </form>
 
-        <script>
-            function submitForm(path, id) {
-                event.preventDefault();
-                var formData = new FormData(document.getElementById(id));
-                var jsonData = {};
-                formData.forEach(function(value, key){
-                    jsonData[key] = value;
-                });
-                console.log('Form Data:', JSON.stringify(jsonData));
-                fetch('/' + path, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(jsonData)
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);
-                    alert(data.msg);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Error submitting the form.');
-                });
-            }
-        </script>
-    </body>
+    <form action="/delete/" method="get">
+        <h2>DELETE STUDENT BY ID</h2>
+        <label for="studentId">Enter Student ID:</label>
+        <input type="text" id="studentId" name="id" required>
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <script>
+        function submitForm(path, id) {
+            event.preventDefault();
+            var formData = new FormData(document.getElementById(id));
+            var jsonData = {};
+            formData.forEach(function(value, key){
+                jsonData[key] = value;
+            });
+            console.log('Form Data:', JSON.stringify(jsonData));
+            fetch('/' + path, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(data.msg);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error submitting the form.');
+            });
+        }
+    </script>
+</body>
 </html>
