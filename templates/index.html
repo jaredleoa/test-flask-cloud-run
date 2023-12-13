@@ -6,22 +6,23 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: #f0f0f0;
+            background: #333;
+            color: #fff;
             margin: 0;
             padding: 20px;
         }
         
         form {
-            background-color: #fff;
+            background-color: #444;
             padding: 20px;
             margin-bottom: 20px;
-            border: 1px solid #ddd;
+            border: 1px solid #555;
             border-radius: 5px;
         }
 
         form h2 {
             margin-top: 0;
-            color: #333;
+            color: #ddd;
         }
 
         label, input, button {
@@ -30,71 +31,31 @@
             margin-bottom: 10px;
         }
 
-        button {
-            background-color: #4CAF50;
-            color: white;
+        input, button {
             padding: 10px;
-            border: none;
+            border: 1px solid #666;
+        }
+
+        input {
+            background-color: #555;
+            color: #fff;
+        }
+
+        button {
+            background-color: #5A9;
+            color: white;
             cursor: pointer;
         }
 
         button:hover {
-            opacity: 0.8;
+            background-color: #47A;
         }
     </style>
-    <title>Minimalistic CRUD Interface</title>
+    <title>Dark Theme CRUD Interface</title>
 </head>
 <body>
-    <h1>Simple CRUD Interface</h1>
+    <h1>Dark Theme CRUD Interface</h1>
 
     <form action="/read" method="GET">
         <h2>Get All Students</h2>
-        <button type="submit">Submit</button>
-    </form>
-
-    <form action="/readStudent/" method="get">
-        <h2>Get Student by ID</h2>
-        <label for="studentId">Student ID:</label>
-        <input type="text" id="studentId" name="id" required>
-        <button type="submit">Submit</button>
-    </form>
-
-    <form action="/write" method="post">
-        <h2>Add Student</h2>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="course">Course:</label>
-        <input type="text" id="course" name="course" required>
-        
-        <label for="year">Year:</label>
-        <input type="text" id="year" name="year" required>
-        
-        <button type="submit">Add</button>
-    </form>
-
-    <form action="/update" method="post">
-        <h2>Update Student</h2>
-        <label for="studentId">Student ID:</label>
-        <input type="text" id="studentId" name="id" required>
-        
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="course">Course:</label>
-        <input type="text" id="course" name="course" required>
-        
-        <label for="year">Year:</label>
-        <input type="text" id="year" name="year" required>
-        
-        <button type="submit">Update</button>
-    </form>
-
-    <form action="/delete/" method="get">
-        <h2>Delete Student by ID</h2>
-        <label for="studentId">Student ID:</label>
-        <input type="text" id="studentId" name="id" required>
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+       
