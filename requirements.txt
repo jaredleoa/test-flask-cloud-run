@@ -1,1 +1,3 @@
-flask
+Flask
+flask_cors
+Flask-MySQLdb
